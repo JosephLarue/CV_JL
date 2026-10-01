@@ -1,0 +1,244 @@
+{
+  "settings": {
+    "name": "Joseph Larue",
+    "defaultLang": "fr"
+  },
+  "sections": [
+    {
+      "id": "hero-1",
+      "type": "hero",
+      "enabled": true,
+      "order": 0,
+      "content": {
+        "fr": {
+          "title": "Développeur — CV technique",
+          "subtitle": "Je conçois et construis des applications web modernes, de l’architecture au déploiement.",
+          "ctaLabel": "Me contacter"
+        },
+        "en": {
+          "title": "Developer — Technical résumé",
+          "subtitle": "I design and build modern web applications, from architecture to deployment.",
+          "ctaLabel": "Get in touch"
+        }
+      }
+    },
+    {
+      "id": "about-1",
+      "type": "about",
+      "enabled": true,
+      "order": 1,
+      "content": {
+        "fr": {
+          "heading": "À propos",
+          "body": "Développeur passionné par le web, les systèmes bien conçus et le code lisible. J’aime transformer des besoins métier en produits robustes et maintenables."
+        },
+        "en": {
+          "heading": "About",
+          "body": "Developer passionate about the web, well-designed systems and readable code. I enjoy turning business needs into robust, maintainable products."
+        }
+      }
+    },
+    {
+      "id": "skills-1",
+      "type": "skills",
+      "enabled": true,
+      "order": 2,
+      "content": {
+        "fr": {
+          "heading": "Compétences",
+          "groups": [
+            {
+              "group": "Frontend",
+              "items": [
+                "React",
+                "TypeScript",
+                "Vite",
+                "Tailwind CSS"
+              ]
+            },
+            {
+              "group": "Backend",
+              "items": [
+                "Node.js",
+                "Express",
+                "REST",
+                "SQL"
+              ]
+            },
+            {
+              "group": "Outils",
+              "items": [
+                "Git",
+                "Docker",
+                "CI/CD",
+                "Linux"
+              ]
+            }
+          ]
+        },
+        "en": {
+          "heading": "Skills",
+          "groups": [
+            {
+              "group": "Frontend",
+              "items": [
+                "React",
+                "TypeScript",
+                "Vite",
+                "Tailwind CSS"
+              ]
+            },
+            {
+              "group": "Backend",
+              "items": [
+                "Node.js",
+                "Express",
+                "REST",
+                "SQL"
+              ]
+            },
+            {
+              "group": "Tools",
+              "items": [
+                "Git",
+                "Docker",
+                "CI/CD",
+                "Linux"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "experience-1",
+      "type": "experience",
+      "enabled": true,
+      "order": 3,
+      "content": {
+        "fr": {
+          "heading": "Expérience",
+          "items": [
+            {
+              "role": "Développeur Full-Stack",
+              "company": "Entreprise",
+              "period": "2023 — aujourd’hui",
+              "description": "Développement et maintenance d’applications web. Conception d’APIs et d’interfaces.",
+              "stack": [
+                "React",
+                "Node.js",
+                "TypeScript"
+              ]
+            }
+          ]
+        },
+        "en": {
+          "heading": "Experience",
+          "items": [
+            {
+              "role": "Full-Stack Developer",
+              "company": "Company",
+              "period": "2023 — present",
+              "description": "Development and maintenance of web applications. API and UI design.",
+              "stack": [
+                "React",
+                "Node.js",
+                "TypeScript"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "projects-1",
+      "type": "projects",
+      "enabled": true,
+      "order": 4,
+      "content": {
+        "fr": {
+          "heading": "Projets",
+          "items": [
+            {
+              "name": "CV technique",
+              "description": "Ce site : landing modulable pilotée par un backoffice, bilingue FR/EN.",
+              "link": "",
+              "stack": [
+                "React",
+                "Vite",
+                "Express"
+              ]
+            }
+          ]
+        },
+        "en": {
+          "heading": "Projects",
+          "items": [
+            {
+              "name": "Technical résumé",
+              "description": "This site: a modular landing page driven by a backoffice, bilingual FR/EN.",
+              "link": "",
+              "stack": [
+                "React",
+                "Vite",
+                "Express"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "education-1",
+      "type": "education",
+      "enabled": true,
+      "order": 5,
+      "content": {
+        "fr": {
+          "heading": "Formation",
+          "items": [
+            {
+              "degree": "Diplôme",
+              "school": "Établissement",
+              "period": "Année"
+            }
+          ]
+        },
+        "en": {
+          "heading": "Education",
+          "items": [
+            {
+              "degree": "Degree",
+              "school": "Institution",
+              "period": "Year"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "contact-1",
+      "type": "contact",
+      "enabled": true,
+      "order": 6,
+      "content": {
+        "fr": {
+          "heading": "Contact",
+          "email": "joseph.larue@edhec.com",
+          "phone": "0786275489",
+          "location": "France",
+          "github": "",
+          "linkedin": ""
+        },
+        "en": {
+          "heading": "Contact",
+          "email": "joseph.larue@edhec.com",
+          "phone": "0786275489",
+          "location": "France",
+          "github": "",
+          "linkedin": ""
+        }
+      }
+    }
+  ]
+}

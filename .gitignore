@@ -1,0 +1,13 @@
+node_modules
+dist
+*.log
+
+# Secrets en clair — jamais poussés
+.env.local
+
+# Overrides runtime (mot de passe après reset, codes)
+data/auth.json
+
+# Divers
+.DS_Store
+*.tmp

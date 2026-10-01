@@ -1,0 +1,2 @@
+# transcrypt : chiffre le .env poussé dans le dépôt
+.env filter=crypt diff=crypt merge=crypt

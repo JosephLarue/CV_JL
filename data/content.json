@@ -48,6 +48,7 @@
           "heading": "Compétences",
           "groups": [
             { "group": "Langages & Frameworks", "items": ["C / C++", "React", "TypeScript", "React Native", "JS / Python", "Ruby on Rails"] },
+            { "group": "IA & Vibecoding", "items": ["Claude Code", "Cursor", "GitHub Copilot", "Claude (Anthropic)", "MCP", "Prompt engineering"] },
             { "group": "Web & Données", "items": ["HTML / CSS", "Node.js", "PostgreSQL", "SQL", "API REST"] },
             { "group": "Méthodes & Soft skills", "items": ["Méthodologies agiles", "Gestion", "Leadership", "Pensée critique", "Esprit d'initiative", "Communication interfonctionnelle", "Réflexion produit", "Adaptabilité"] },
             { "group": "Langues", "items": ["Français (natif)", "Anglais (C1)", "Espagnol"] },
@@ -58,6 +59,7 @@
           "heading": "Skills",
           "groups": [
             { "group": "Languages & Frameworks", "items": ["C / C++", "React", "TypeScript", "React Native", "JS / Python", "Ruby on Rails"] },
+            { "group": "AI & Vibecoding", "items": ["Claude Code", "Cursor", "GitHub Copilot", "Claude (Anthropic)", "MCP", "Prompt engineering"] },
             { "group": "Web & Data", "items": ["HTML / CSS", "Node.js", "PostgreSQL", "SQL", "REST API"] },
             { "group": "Methods & Soft skills", "items": ["Agile methodologies", "Management", "Leadership", "Critical thinking", "Initiative", "Cross-functional communication", "Product thinking", "Adaptability"] },
             { "group": "Languages", "items": ["French (native)", "English (C1)", "Spanish"] },

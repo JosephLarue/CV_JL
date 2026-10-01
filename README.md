@@ -1,5 +1,3 @@
-##Bonjour
-
 Ce "projet" est une représentation de mon cursus et de mon parcours fait très rapidement en utilisant claude code. On va voir rapidement si ça produit quelque chose de propre ou non.
 
 ---

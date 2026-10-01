@@ -4,6 +4,7 @@ import { AnimatePresence, motion, useScroll, useSpring } from 'framer-motion'
 import Background from '../components/Background'
 import Game from '../components/Game'
 import Pong from '../components/Pong'
+import Race from '../components/Race'
 import LangSwitch from '../components/LangSwitch'
 import ThemeSwitch from '../components/ThemeSwitch'
 import SectionRenderer from '../components/sections/SectionRenderer'
@@ -17,7 +18,12 @@ export default function Landing() {
   const [error, setError] = useState<string | null>(null)
 
   const [atBottom, setAtBottom] = useState(false)
-  const [game, setGame] = useState<'snake' | 'pong' | null>(null)
+  const [game, setGame] = useState<'snake' | 'pong' | 'race' | null>(null)
+
+  const pickGame = () => {
+    const r = Math.random()
+    setGame(r < 1 / 3 ? 'snake' : r < 2 / 3 ? 'pong' : 'race')
+  }
 
   const { scrollYProgress } = useScroll()
   const progress = useSpring(scrollYProgress, { stiffness: 120, damping: 30, mass: 0.3 })
@@ -70,7 +76,7 @@ export default function Landing() {
       <header className="sticky top-0 z-40 border-b border-fg/5 bg-ink/95 backdrop-blur-md">
         <div className="container-cv flex h-14 items-center justify-between">
           <button
-            onClick={() => setGame(Math.random() < 0.5 ? 'snake' : 'pong')}
+            onClick={pickGame}
             className="group font-mono text-sm font-bold text-strong transition-colors hover:text-accent"
             title={lang === 'fr' ? 'Clique pour jouer 🎮' : 'Click to play 🎮'}
           >
@@ -116,6 +122,7 @@ export default function Landing() {
       <AnimatePresence>
         {game === 'snake' && <Game onClose={() => setGame(null)} lang={lang} />}
         {game === 'pong' && <Pong onClose={() => setGame(null)} lang={lang} />}
+        {game === 'race' && <Race onClose={() => setGame(null)} lang={lang} />}
       </AnimatePresence>
     </div>
   )

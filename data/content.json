@@ -11,13 +11,13 @@
       "order": 0,
       "content": {
         "fr": {
-          "title": "Développeur — CV technique",
-          "subtitle": "Je conçois et construis des applications web modernes, de l’architecture au déploiement.",
+          "title": "Développeur Fullstack",
+          "subtitle": "Développeur basé à Paris, avec une double formation : commerciale (EDHEC, UC Berkeley Haas) et développement logiciel (École 42). Passionné par l'apprentissage de nouvelles technologies et la création de solutions créatives et efficaces.",
           "ctaLabel": "Me contacter"
         },
         "en": {
-          "title": "Developer — Technical résumé",
-          "subtitle": "I design and build modern web applications, from architecture to deployment.",
+          "title": "Fullstack Developer",
+          "subtitle": "Paris-based developer with a dual background: business (EDHEC, UC Berkeley Haas) and software engineering (École 42). Passionate about learning new technologies and building creative, effective solutions.",
           "ctaLabel": "Get in touch"
         }
       }
@@ -30,11 +30,11 @@
       "content": {
         "fr": {
           "heading": "À propos",
-          "body": "Développeur passionné par le web, les systèmes bien conçus et le code lisible. J’aime transformer des besoins métier en produits robustes et maintenables."
+          "body": "Je suis un développeur basé à Paris avec une solide formation commerciale acquise à l'EDHEC et à Berkeley Haas, ainsi que des compétences en développement informatique développées à l'École 42. Dévoué à l'innovation, je suis passionné par l'apprentissage de nouvelles technologies et leur application pour développer des solutions créatives et efficaces. Je m'épanouis dans des environnements qui me poussent à penser différemment pour résoudre les problèmes et à aborder les défis sous un angle nouveau afin d'obtenir des résultats percutants."
         },
         "en": {
           "heading": "About",
-          "body": "Developer passionate about the web, well-designed systems and readable code. I enjoy turning business needs into robust, maintainable products."
+          "body": "I'm a Paris-based developer with a solid business background from EDHEC and Berkeley Haas, combined with software development skills built at École 42. Committed to innovation, I'm passionate about learning new technologies and applying them to build creative, effective solutions. I thrive in environments that push me to think differently, solve problems and approach challenges from a fresh angle to deliver impactful results."
         }
       }
     },
@@ -47,65 +47,21 @@
         "fr": {
           "heading": "Compétences",
           "groups": [
-            {
-              "group": "Frontend",
-              "items": [
-                "React",
-                "TypeScript",
-                "Vite",
-                "Tailwind CSS"
-              ]
-            },
-            {
-              "group": "Backend",
-              "items": [
-                "Node.js",
-                "Express",
-                "REST",
-                "SQL"
-              ]
-            },
-            {
-              "group": "Outils",
-              "items": [
-                "Git",
-                "Docker",
-                "CI/CD",
-                "Linux"
-              ]
-            }
+            { "group": "Langages & Frameworks", "items": ["C / C++", "React", "TypeScript", "React Native", "JS / Python", "Ruby on Rails"] },
+            { "group": "Web & Données", "items": ["HTML / CSS", "Node.js", "PostgreSQL", "SQL", "API REST"] },
+            { "group": "Méthodes & Soft skills", "items": ["Méthodologies agiles", "Gestion", "Leadership", "Pensée critique", "Esprit d'initiative", "Communication interfonctionnelle", "Réflexion produit", "Adaptabilité"] },
+            { "group": "Langues", "items": ["Français (natif)", "Anglais (C1)", "Espagnol"] },
+            { "group": "Outils", "items": ["Google Suite", "Microsoft Suite", "Salesforce"] }
           ]
         },
         "en": {
           "heading": "Skills",
           "groups": [
-            {
-              "group": "Frontend",
-              "items": [
-                "React",
-                "TypeScript",
-                "Vite",
-                "Tailwind CSS"
-              ]
-            },
-            {
-              "group": "Backend",
-              "items": [
-                "Node.js",
-                "Express",
-                "REST",
-                "SQL"
-              ]
-            },
-            {
-              "group": "Tools",
-              "items": [
-                "Git",
-                "Docker",
-                "CI/CD",
-                "Linux"
-              ]
-            }
+            { "group": "Languages & Frameworks", "items": ["C / C++", "React", "TypeScript", "React Native", "JS / Python", "Ruby on Rails"] },
+            { "group": "Web & Data", "items": ["HTML / CSS", "Node.js", "PostgreSQL", "SQL", "REST API"] },
+            { "group": "Methods & Soft skills", "items": ["Agile methodologies", "Management", "Leadership", "Critical thinking", "Initiative", "Cross-functional communication", "Product thinking", "Adaptability"] },
+            { "group": "Languages", "items": ["French (native)", "English (C1)", "Spanish"] },
+            { "group": "Tools", "items": ["Google Suite", "Microsoft Suite", "Salesforce"] }
           ]
         }
       }
@@ -120,15 +76,32 @@
           "heading": "Expérience",
           "items": [
             {
-              "role": "Développeur Full-Stack",
-              "company": "Entreprise",
-              "period": "2023 — aujourd’hui",
-              "description": "Développement et maintenance d’applications web. Conception d’APIs et d’interfaces.",
-              "stack": [
-                "React",
-                "Node.js",
-                "TypeScript"
-              ]
+              "role": "Développeur Fullstack",
+              "company": "Galadrim",
+              "period": "Fév. 2025 — Aujourd'hui",
+              "description": "Développement d'applications web et mobiles en React, React Native, Node.js et PostgreSQL.\nParticipation au développement frontend et backend, intégration d'API et mise en œuvre d'interfaces utilisateur.\nMaintenance évolutive et corrective de projets digitaux variés.\nContribution aux cycles agiles, revues de code et déploiements continus.",
+              "stack": ["React", "React Native", "Node.js", "PostgreSQL", "TypeScript"]
+            },
+            {
+              "role": "CRM — Opérateur Technique de Campagnes",
+              "company": "Vestiaire Collective",
+              "period": "Jan. 2021 — Juil. 2022",
+              "description": "Production des communications → rationalisation et industrialisation du processus de production des newsletters.\nAmélioration de la stratégie de communication → personnalisation accrue et campagnes plus efficaces.\nGestion du projet Megadays → dépassement d'objectifs ambitieux.\nDéveloppement et lancement de la fonctionnalité de radiation de masse → réduction significative des transactions annulées.",
+              "stack": ["CRM", "Salesforce", "SQL"]
+            },
+            {
+              "role": "Assistant d'enseignement (Freelance)",
+              "company": "Le Wagon",
+              "period": "Sept. — Déc. 2020",
+              "description": "Accompagnement des étudiants sur les concepts et exercices en HTML/CSS, JavaScript et Ruby on Rails.\nFacilitation des activités de codage : exercices, projets et ateliers aux côtés des instructeurs.\nRelecture des travaux et retours constructifs pour les faire progresser.",
+              "stack": ["HTML/CSS", "JavaScript", "Ruby on Rails"]
+            },
+            {
+              "role": "Business Analyst / Growth Hacker",
+              "company": "Everoad",
+              "period": "Jan. — Juil. 2019",
+              "description": "Analyses de données pour éclairer les décisions commerciales → restructuration de l'équipe de vente en deux unités spécialisées.\nConception et mise en œuvre de flux de travail pour une nouvelle équipe de vente → efficacité atteinte en un mois.\nOptimisation et automatisation des processus Salesforce → livraison quotidienne de KPI à la direction et forte hausse de l'efficacité commerciale.",
+              "stack": ["Salesforce", "Data", "Growth"]
             }
           ]
         },
@@ -136,16 +109,59 @@
           "heading": "Experience",
           "items": [
             {
-              "role": "Full-Stack Developer",
-              "company": "Company",
-              "period": "2023 — present",
-              "description": "Development and maintenance of web applications. API and UI design.",
-              "stack": [
-                "React",
-                "Node.js",
-                "TypeScript"
-              ]
+              "role": "Fullstack Developer",
+              "company": "Galadrim",
+              "period": "Feb. 2025 — Present",
+              "description": "Building web and mobile applications with React, React Native, Node.js and PostgreSQL.\nFrontend and backend development, API integration and UI implementation.\nEvolutionary and corrective maintenance across varied digital projects.\nContributing to agile cycles, code reviews and continuous deployments.",
+              "stack": ["React", "React Native", "Node.js", "PostgreSQL", "TypeScript"]
+            },
+            {
+              "role": "CRM — Technical Campaign Operator",
+              "company": "Vestiaire Collective",
+              "period": "Jan. 2021 — Jul. 2022",
+              "description": "Communications production → streamlined and industrialized the newsletter production process.\nImproved the communication strategy → stronger personalization and more effective campaigns.\nManaged the Megadays project → exceeded ambitious targets.\nDeveloped and launched the mass delisting feature → significant reduction in cancelled transactions.",
+              "stack": ["CRM", "Salesforce", "SQL"]
+            },
+            {
+              "role": "Teaching Assistant (Freelance)",
+              "company": "Le Wagon",
+              "period": "Sep. — Dec. 2020",
+              "description": "Supported students through HTML/CSS, JavaScript and Ruby on Rails concepts and exercises.\nFacilitated coding activities: exercises, projects and workshops alongside instructors.\nReviewed student work and gave constructive feedback to help them improve.",
+              "stack": ["HTML/CSS", "JavaScript", "Ruby on Rails"]
+            },
+            {
+              "role": "Business Analyst / Growth Hacker",
+              "company": "Everoad",
+              "period": "Jan. — Jul. 2019",
+              "description": "Data analysis to inform business decisions → restructured the sales team into two specialized units.\nDesigned and implemented workflows for a new sales team → target efficiency reached within a month.\nOptimized and automated Salesforce processes → daily KPI delivery to management and a significant boost in sales efficiency.",
+              "stack": ["Salesforce", "Data", "Growth"]
             }
+          ]
+        }
+      }
+    },
+    {
+      "id": "education-1",
+      "type": "education",
+      "enabled": true,
+      "order": 4,
+      "content": {
+        "fr": {
+          "heading": "Formation",
+          "items": [
+            { "degree": "Développement logiciel", "school": "École 42", "period": "2022 — 2024" },
+            { "degree": "BHGAP", "school": "Haas School of Business, UC Berkeley", "period": "2019 — 2020" },
+            { "degree": "Master MIM — Global Economic Transformation & Technology", "school": "EDHEC Business School", "period": "2016 — 2020" },
+            { "degree": "MIM GETT", "school": "Sungkyunkwan Graduate School of Business", "period": "2018" }
+          ]
+        },
+        "en": {
+          "heading": "Education",
+          "items": [
+            { "degree": "Software Development", "school": "École 42", "period": "2022 — 2024" },
+            { "degree": "BHGAP", "school": "Haas School of Business, UC Berkeley", "period": "2019 — 2020" },
+            { "degree": "MIM Master — Global Economic Transformation & Technology", "school": "EDHEC Business School", "period": "2016 — 2020" },
+            { "degree": "MIM GETT", "school": "Sungkyunkwan Graduate School of Business", "period": "2018" }
           ]
         }
       }
@@ -153,8 +169,8 @@
     {
       "id": "projects-1",
       "type": "projects",
-      "enabled": true,
-      "order": 4,
+      "enabled": false,
+      "order": 5,
       "content": {
         "fr": {
           "heading": "Projets",
@@ -163,11 +179,7 @@
               "name": "CV technique",
               "description": "Ce site : landing modulable pilotée par un backoffice, bilingue FR/EN.",
               "link": "",
-              "stack": [
-                "React",
-                "Vite",
-                "Express"
-              ]
+              "stack": ["React", "Vite", "Express"]
             }
           ]
         },
@@ -178,39 +190,7 @@
               "name": "Technical résumé",
               "description": "This site: a modular landing page driven by a backoffice, bilingual FR/EN.",
               "link": "",
-              "stack": [
-                "React",
-                "Vite",
-                "Express"
-              ]
-            }
-          ]
-        }
-      }
-    },
-    {
-      "id": "education-1",
-      "type": "education",
-      "enabled": true,
-      "order": 5,
-      "content": {
-        "fr": {
-          "heading": "Formation",
-          "items": [
-            {
-              "degree": "Diplôme",
-              "school": "Établissement",
-              "period": "Année"
-            }
-          ]
-        },
-        "en": {
-          "heading": "Education",
-          "items": [
-            {
-              "degree": "Degree",
-              "school": "Institution",
-              "period": "Year"
+              "stack": ["React", "Vite", "Express"]
             }
           ]
         }
@@ -225,18 +205,18 @@
         "fr": {
           "heading": "Contact",
           "email": "joseph.larue@edhec.com",
-          "phone": "0786275489",
-          "location": "France",
+          "phone": "+33 7 86 27 54 89",
+          "location": "Paris, France",
           "github": "",
-          "linkedin": ""
+          "linkedin": "https://www.linkedin.com/in/joseph-larue-b05b84136/"
         },
         "en": {
           "heading": "Contact",
           "email": "joseph.larue@edhec.com",
-          "phone": "0786275489",
-          "location": "France",
+          "phone": "+33 7 86 27 54 89",
+          "location": "Paris, France",
           "github": "",
-          "linkedin": ""
+          "linkedin": "https://www.linkedin.com/in/joseph-larue-b05b84136/"
         }
       }
     }

@@ -1,6 +1,7 @@
 node_modules
 dist
 *.log
+*.tsbuildinfo
 
 # Secrets en clair — jamais poussés
 .env.local

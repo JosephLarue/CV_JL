@@ -12,6 +12,26 @@ html {
 
 body {
   @apply bg-ink text-slate-200 font-sans antialiased;
+  overflow-x: hidden;
+}
+
+/* ---- custom scrollbar ---- */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #0b1020;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(#38bdf8, #ff6ec7);
+  border-radius: 99px;
+  border: 2px solid #0c0813;
+}
+
+/* ---- selection ---- */
+::selection {
+  background: rgba(56, 189, 248, 0.3);
+  color: #fff;
 }
 
 @layer components {
@@ -19,24 +39,90 @@ body {
     @apply mx-auto w-full max-w-5xl px-5 sm:px-8;
   }
   .btn {
-    @apply inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2 text-sm font-medium transition-colors;
+    @apply inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2 text-sm font-medium transition-all duration-200;
   }
   .btn-accent {
-    @apply btn bg-accent text-ink hover:bg-sky-300;
+    @apply btn bg-accent text-ink shadow-neon hover:-translate-y-0.5 hover:bg-sky-300;
   }
   .btn-ghost {
-    @apply btn border border-white/10 text-slate-200 hover:bg-white/5;
+    @apply btn border border-white/10 text-slate-200 hover:border-white/25 hover:bg-white/5;
   }
   .card {
-    @apply rounded-xl border border-white/10 bg-panel/60 p-5 backdrop-blur;
+    @apply relative rounded-xl border border-white/10 bg-panel/60 p-5 backdrop-blur transition-all duration-300;
+  }
+  .card-hover {
+    @apply hover:-translate-y-1 hover:border-accent/40 hover:shadow-xl hover:shadow-accent/10;
   }
   .label {
     @apply block text-xs font-medium uppercase tracking-wide text-slate-400;
   }
   .input {
-    @apply w-full rounded-lg border border-white/10 bg-ink/60 px-3 py-2 text-sm text-slate-100 outline-none focus:border-accent;
+    @apply w-full rounded-lg border border-white/10 bg-ink/60 px-3 py-2 text-sm text-slate-100 outline-none transition-colors focus:border-accent focus:ring-1 focus:ring-accent/40;
   }
   .chip {
-    @apply inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-slate-200;
+    @apply inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-slate-200 transition-all duration-200 hover:scale-105 hover:border-accent/50 hover:text-white;
+  }
+  .gradient-text {
+    @apply bg-gradient-to-r from-sky-300 via-accent to-accent2 bg-clip-text text-transparent;
+    background-size: 200% auto;
+    animation: shimmer 6s linear infinite;
+  }
+}
+
+/* ---- keyframes ---- */
+@keyframes shimmer {
+  to {
+    background-position: 200% center;
+  }
+}
+
+@keyframes blob {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(40px, -60px) scale(1.15);
+  }
+  66% {
+    transform: translate(-30px, 30px) scale(0.9);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+.animate-blob {
+  animation: blob 18s ease-in-out infinite;
+}
+.animate-float {
+  animation: float 5s ease-in-out infinite;
+}
+
+/* ---- subtle grid overlay ---- */
+.bg-grid {
+  background-image:
+    linear-gradient(rgba(148, 163, 184, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148, 163, 184, 0.06) 1px, transparent 1px);
+  background-size: 40px 40px;
+  -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 40%, transparent 100%);
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 40%, transparent 100%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }

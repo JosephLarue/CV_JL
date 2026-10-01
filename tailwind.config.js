@@ -4,10 +4,14 @@ export default {
   theme: {
     extend: {
       colors: {
-        ink: '#0b1020',
-        panel: '#111827',
+        ink: '#0c0813',
+        panel: '#171221',
         accent: '#38bdf8',
-        accent2: '#a78bfa',
+        accent2: '#ff6ec7',
+        neon: '#ff6ec7',
+      },
+      boxShadow: {
+        neon: '0 0 24px rgba(255,110,199,0.3)',
       },
       fontFamily: {
         mono: ['"JetBrains Mono"', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'monospace'],

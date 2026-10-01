@@ -44,19 +44,19 @@ export default function ForgotPassword({ onBack }: { onBack: () => void }) {
   return (
     <div className="flex min-h-screen items-center justify-center p-5">
       <div className="card w-full max-w-sm space-y-4">
-        <h1 className="text-xl font-bold text-white">Mot de passe oublié</h1>
+        <h1 className="text-xl font-bold text-strong">Mot de passe oublié</h1>
 
         {step === 'request' ? (
           <form onSubmit={send} className="space-y-4">
             <div className="space-y-1.5">
               <span className="label">Recevoir un code via</span>
-              <div className="inline-flex w-full overflow-hidden rounded-lg border border-white/10 text-sm">
+              <div className="inline-flex w-full overflow-hidden rounded-lg border border-fg/10 text-sm">
                 {(['email', 'sms'] as ResetChannel[]).map((c) => (
                   <button
                     type="button"
                     key={c}
                     onClick={() => setChannel(c)}
-                    className={'flex-1 px-3 py-2 uppercase ' + (channel === c ? 'bg-accent text-ink' : 'text-slate-300 hover:bg-white/5')}
+                    className={'flex-1 px-3 py-2 uppercase ' + (channel === c ? 'bg-accent text-ink' : 'text-body hover:bg-fg/5')}
                   >
                     {c}
                   </button>
@@ -92,7 +92,7 @@ export default function ForgotPassword({ onBack }: { onBack: () => void }) {
           </form>
         )}
 
-        <button onClick={onBack} className="w-full text-xs text-slate-500 hover:text-slate-300">
+        <button onClick={onBack} className="w-full text-xs text-muted hover:text-body">
           ← Retour à la connexion
         </button>
       </div>

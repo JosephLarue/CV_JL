@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { motion, useScroll, useSpring } from 'framer-motion'
 import Background from '../components/Background'
 import LangSwitch from '../components/LangSwitch'
+import ThemeSwitch from '../components/ThemeSwitch'
 import SectionRenderer from '../components/sections/SectionRenderer'
 import { useLang } from '../i18n/LangContext'
 import { fetchContent } from '../lib/api'
@@ -37,14 +38,15 @@ export default function Landing() {
         style={{ scaleX: progress }}
       />
 
-      <header className="sticky top-0 z-40 border-b border-white/5 bg-ink/70 backdrop-blur-md">
+      <header className="sticky top-0 z-40 border-b border-fg/5 bg-ink/70 backdrop-blur-md">
         <div className="container-cv flex h-14 items-center justify-between">
-          <a href="#hero" className="font-mono text-sm font-bold text-white transition-colors hover:text-accent">
+          <a href="#hero" className="font-mono text-sm font-bold text-strong transition-colors hover:text-accent">
             {content.settings.name}
           </a>
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 sm:gap-3">
+            <ThemeSwitch />
             <LangSwitch />
-            <Link to="/admin" className="text-xs text-slate-500 transition-colors hover:text-slate-300">
+            <Link to="/admin" className="text-xs text-muted transition-colors hover:text-body">
               admin
             </Link>
           </div>
@@ -57,7 +59,7 @@ export default function Landing() {
         ))}
       </main>
 
-      <footer className="border-t border-white/5 py-10 text-center text-xs text-slate-500">
+      <footer className="border-t border-fg/5 py-10 text-center text-xs text-muted">
         <p>
           © {content.settings.name} — {lang === 'fr' ? 'Conçu & codé avec' : 'Designed & coded with'}{' '}
           <span className="text-accent">React</span> + <span className="text-accent2">Vite</span>
@@ -69,7 +71,7 @@ export default function Landing() {
 
 function Centered({ children }: { children: React.ReactNode }) {
   return (
-    <div className="flex min-h-screen items-center justify-center text-slate-400">
+    <div className="flex min-h-screen items-center justify-center text-muted">
       <Background />
       <span className="animate-pulse">{children}</span>
     </div>

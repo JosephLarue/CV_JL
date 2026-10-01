@@ -10,7 +10,7 @@ export default function About({ data }: { data: AboutBlock }) {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: '-80px' }}
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-        className="max-w-3xl whitespace-pre-line text-lg leading-relaxed text-slate-300"
+        className="max-w-3xl whitespace-pre-line text-lg leading-relaxed text-body"
       >
         {data.body}
       </motion.p>

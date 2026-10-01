@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { clearToken, fetchContent, getToken, saveContent } from '../../lib/api'
 import type { Content, Lang, Section } from '../../lib/types'
 import { SECTION_LABELS } from '../../lib/types'
+import ThemeSwitch from '../../components/ThemeSwitch'
 import Login from './Login'
 import SectionEditor from './SectionEditor'
 
@@ -19,7 +20,7 @@ export default function Admin() {
   }, [authed])
 
   if (!authed) return <Login onSuccess={() => setAuthed(true)} />
-  if (!content) return <div className="p-8 text-slate-400">{status ?? 'Chargement…'}</div>
+  if (!content) return <div className="p-8 text-muted">{status ?? 'Chargement…'}</div>
 
   const sections = [...content.sections].sort((a, b) => a.order - b.order)
 
@@ -64,16 +65,17 @@ export default function Admin() {
 
   return (
     <div className="min-h-screen">
-      <header className="sticky top-0 z-40 border-b border-white/5 bg-ink/90 backdrop-blur">
+      <header className="sticky top-0 z-40 border-b border-fg/5 bg-ink/90 backdrop-blur">
         <div className="container-cv flex h-14 items-center justify-between">
-          <h1 className="font-mono text-sm font-bold text-white">Backoffice CV</h1>
+          <h1 className="font-mono text-sm font-bold text-strong">Backoffice CV</h1>
           <div className="flex items-center gap-3">
-            <div className="inline-flex overflow-hidden rounded-lg border border-white/10 text-xs font-semibold">
+            <ThemeSwitch />
+            <div className="inline-flex overflow-hidden rounded-lg border border-fg/10 text-xs font-semibold">
               {(['fr', 'en'] as Lang[]).map((l) => (
                 <button
                   key={l}
                   onClick={() => setLang(l)}
-                  className={'px-3 py-1.5 uppercase ' + (lang === l ? 'bg-accent text-ink' : 'text-slate-300 hover:bg-white/5')}
+                  className={'px-3 py-1.5 uppercase ' + (lang === l ? 'bg-accent text-ink' : 'text-body hover:bg-fg/5')}
                 >
                   {l}
                 </button>
@@ -85,12 +87,12 @@ export default function Admin() {
             <button onClick={save} className="btn-accent text-xs" disabled={saving}>
               {saving ? '…' : 'Sauvegarder'}
             </button>
-            <button onClick={logout} className="text-xs text-slate-500 hover:text-slate-300">
+            <button onClick={logout} className="text-xs text-muted hover:text-body">
               Déconnexion
             </button>
           </div>
         </div>
-        {status && <div className="container-cv pb-2 text-xs text-slate-400">{status}</div>}
+        {status && <div className="container-cv pb-2 text-xs text-muted">{status}</div>}
       </header>
 
       <main className="container-cv space-y-3 py-6">
@@ -98,8 +100,8 @@ export default function Admin() {
           <div key={s.id} className="card">
             <div className="flex flex-wrap items-center justify-between gap-3">
               <div className="flex items-center gap-3">
-                <span className="font-mono text-xs text-slate-500">{String(i).padStart(2, '0')}</span>
-                <span className="font-semibold text-white">{SECTION_LABELS[s.type]}</span>
+                <span className="font-mono text-xs text-muted">{String(i).padStart(2, '0')}</span>
+                <span className="font-semibold text-strong">{SECTION_LABELS[s.type]}</span>
                 <span className="chip">{s.type}</span>
               </div>
               <div className="flex items-center gap-1">
@@ -113,7 +115,7 @@ export default function Admin() {
                 >
                   ↓
                 </button>
-                <label className="ml-2 inline-flex cursor-pointer items-center gap-2 text-xs text-slate-300">
+                <label className="ml-2 inline-flex cursor-pointer items-center gap-2 text-xs text-body">
                   <input
                     type="checkbox"
                     checked={s.enabled}
@@ -131,7 +133,7 @@ export default function Admin() {
             </div>
 
             {editing === s.id && (
-              <div className="mt-4 border-t border-white/10 pt-4">
+              <div className="mt-4 border-t border-fg/10 pt-4">
                 <SectionEditor
                   section={s}
                   lang={lang}

@@ -18,7 +18,7 @@ export default function SectionShell({
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-          className="mb-10 flex items-center gap-3 text-3xl font-bold text-white"
+          className="mb-10 flex items-center gap-3 text-3xl font-bold text-strong"
         >
           <span className="font-mono text-accent">#</span>
           {heading}

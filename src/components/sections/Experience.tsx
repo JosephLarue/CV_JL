@@ -12,12 +12,12 @@ export default function Experience({ data }: { data: ExperienceBlock }) {
               <span className="absolute -left-8 top-6 hidden h-3.5 w-3.5 rounded-full border-2 border-accent bg-ink sm:block" />
               <div className="card card-hover">
                 <div className="flex flex-wrap items-baseline justify-between gap-2">
-                  <h3 className="text-lg font-semibold text-white">
+                  <h3 className="text-lg font-semibold text-strong">
                     {it.role} <span className="text-accent">· {it.company}</span>
                   </h3>
                   <span className="chip font-mono">{it.period}</span>
                 </div>
-                <p className="mt-3 whitespace-pre-line leading-relaxed text-slate-300">
+                <p className="mt-3 whitespace-pre-line leading-relaxed text-body">
                   {it.description}
                 </p>
                 {it.stack && it.stack.length > 0 && (

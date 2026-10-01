@@ -10,8 +10,8 @@ export default function Education({ data }: { data: EducationBlock }) {
           <Item key={i}>
             <div className="card card-hover flex flex-wrap items-baseline justify-between gap-2 border-l-2 border-accent/40">
               <div>
-                <h3 className="font-semibold text-white">{it.degree}</h3>
-                <p className="text-slate-400">{it.school}</p>
+                <h3 className="font-semibold text-strong">{it.degree}</h3>
+                <p className="text-muted">{it.school}</p>
               </div>
               <span className="chip font-mono">{it.period}</span>
             </div>

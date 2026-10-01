@@ -14,12 +14,28 @@ export default function Landing() {
   const [content, setContent] = useState<Content | null>(null)
   const [error, setError] = useState<string | null>(null)
 
+  const [atBottom, setAtBottom] = useState(false)
+
   const { scrollYProgress } = useScroll()
   const progress = useSpring(scrollYProgress, { stiffness: 120, damping: 30, mass: 0.3 })
 
   useEffect(() => {
     fetchContent().then(setContent).catch((e) => setError(e.message))
   }, [])
+
+  // Reveal the bottom easter-egg only when the footer is at the viewport bottom,
+  // so the fixed message never leaks over mid-page content.
+  useEffect(() => {
+    const se = document.scrollingElement || document.documentElement
+    const onScroll = () => setAtBottom(se.scrollTop + se.clientHeight >= se.scrollHeight - 4)
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    window.addEventListener('resize', onScroll)
+    return () => {
+      window.removeEventListener('scroll', onScroll)
+      window.removeEventListener('resize', onScroll)
+    }
+  }, [content])
 
   if (error) return <Centered>{error}</Centered>
   if (!content) return <Centered>Chargement…</Centered>
@@ -30,6 +46,16 @@ export default function Landing() {
 
   return (
     <div className="relative min-h-screen">
+      {/* Pinned to the viewport top, behind the header. The opaque header covers it;
+          on macOS rubber-band overscroll the header slides down and reveals this. */}
+      <div className="pointer-events-none fixed inset-x-0 top-0 z-30 flex h-14 items-center justify-center text-center font-mono text-sm font-medium text-muted">
+        <span className="animate-float">
+          {lang === 'fr'
+            ? '😵‍💫 Trop loin, arrête, tu vas me déchirer !'
+            : "😵‍💫 Too far stop you'll tear me appart !"}
+        </span>
+      </div>
+
       <Background />
 
       {/* scroll progress bar */}
@@ -38,7 +64,7 @@ export default function Landing() {
         style={{ scaleX: progress }}
       />
 
-      <header className="sticky top-0 z-40 border-b border-fg/5 bg-ink/70 backdrop-blur-md">
+      <header className="sticky top-0 z-40 border-b border-fg/5 bg-ink/95 backdrop-blur-md">
         <div className="container-cv flex h-14 items-center justify-between">
           <a href="#hero" className="font-mono text-sm font-bold text-strong transition-colors hover:text-accent">
             {content.settings.name}
@@ -59,7 +85,20 @@ export default function Landing() {
         ))}
       </main>
 
-      <footer className="border-t border-fg/5 py-10 text-center text-xs text-muted">
+      {/* Pinned to the viewport bottom, behind the opaque footer. Only mounted when at
+          the page bottom (no mid-page leak); on downward rubber-band overscroll the
+          footer slides up and reveals this. */}
+      {atBottom && (
+        <div className="pointer-events-none fixed inset-x-0 bottom-0 z-30 flex h-24 items-center justify-center text-center font-mono text-sm font-medium text-muted">
+          <span className="animate-float">
+            {lang === 'fr'
+              ? "🫠 C'est fini — t'as atteint le fond d'internet !"
+              : "🫠 That's all folks — you reached the bottom of the internet !"}
+          </span>
+        </div>
+      )}
+
+      <footer className="relative z-40 border-t border-fg/5 bg-ink py-10 text-center text-xs text-muted">
         <p>
           © {content.settings.name} — {lang === 'fr' ? 'Conçu & codé avec' : 'Designed & coded with'}{' '}
           <span className="text-accent">React</span> + <span className="text-accent2">Vite</span>

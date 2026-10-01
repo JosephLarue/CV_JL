@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { motion, useScroll, useSpring } from 'framer-motion'
+import { AnimatePresence, motion, useScroll, useSpring } from 'framer-motion'
 import Background from '../components/Background'
+import Game from '../components/Game'
+import Pong from '../components/Pong'
 import LangSwitch from '../components/LangSwitch'
 import ThemeSwitch from '../components/ThemeSwitch'
 import SectionRenderer from '../components/sections/SectionRenderer'
@@ -15,6 +17,7 @@ export default function Landing() {
   const [error, setError] = useState<string | null>(null)
 
   const [atBottom, setAtBottom] = useState(false)
+  const [game, setGame] = useState<'snake' | 'pong' | null>(null)
 
   const { scrollYProgress } = useScroll()
   const progress = useSpring(scrollYProgress, { stiffness: 120, damping: 30, mass: 0.3 })
@@ -66,9 +69,14 @@ export default function Landing() {
 
       <header className="sticky top-0 z-40 border-b border-fg/5 bg-ink/95 backdrop-blur-md">
         <div className="container-cv flex h-14 items-center justify-between">
-          <a href="#hero" className="font-mono text-sm font-bold text-strong transition-colors hover:text-accent">
+          <button
+            onClick={() => setGame(Math.random() < 0.5 ? 'snake' : 'pong')}
+            className="group font-mono text-sm font-bold text-strong transition-colors hover:text-accent"
+            title={lang === 'fr' ? 'Clique pour jouer 🎮' : 'Click to play 🎮'}
+          >
             {content.settings.name}
-          </a>
+            <span className="ml-1.5 opacity-0 transition-opacity group-hover:opacity-100">🎮</span>
+          </button>
           <div className="flex items-center gap-2 sm:gap-3">
             <ThemeSwitch />
             <LangSwitch />
@@ -104,6 +112,11 @@ export default function Landing() {
           <span className="text-accent">React</span> + <span className="text-accent2">Vite</span>
         </p>
       </footer>
+
+      <AnimatePresence>
+        {game === 'snake' && <Game onClose={() => setGame(null)} lang={lang} />}
+        {game === 'pong' && <Pong onClose={() => setGame(null)} lang={lang} />}
+      </AnimatePresence>
     </div>
   )
 }

@@ -31,7 +31,7 @@ export default function Contact({ data }: { data: ContactBlock }) {
             ) : (
               <div className="card flex items-center justify-between gap-4">
                 <span className="label">{r.label}</span>
-                <span className="text-slate-200">{r.value}</span>
+                <span className="text-body">{r.value}</span>
               </div>
             )}
           </Item>

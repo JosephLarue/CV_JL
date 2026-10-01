@@ -86,7 +86,7 @@ export function ArrayEditor<T>({
         </button>
       </div>
       {list.map((item, i) => (
-        <div key={i} className="rounded-lg border border-white/10 bg-ink/40 p-3">
+        <div key={i} className="rounded-lg border border-fg/10 bg-ink/40 p-3">
           <div className="mb-2 flex items-center justify-end gap-1">
             <button type="button" className="btn-ghost px-2 py-1 text-xs" onClick={() => move(i, -1)}>
               ↑

@@ -51,7 +51,7 @@ export default function Hero({ data, name }: { data: HeroBlock; name: string }) 
           <span className="gradient-text">{data.title}</span>
         </motion.h1>
 
-        <motion.p variants={item} className="mt-6 max-w-2xl text-lg leading-relaxed text-slate-400">
+        <motion.p variants={item} className="mt-6 max-w-2xl text-lg leading-relaxed text-muted">
           {data.subtitle}
         </motion.p>
 
@@ -72,7 +72,7 @@ export default function Hero({ data, name }: { data: HeroBlock; name: string }) 
         animate={{ opacity: 1 }}
         transition={{ delay: 1 }}
       >
-        <div className="flex h-9 w-5 items-start justify-center rounded-full border border-white/20 p-1">
+        <div className="flex h-9 w-5 items-start justify-center rounded-full border border-fg/20 p-1">
           <motion.div
             className="h-2 w-1 rounded-full bg-accent"
             animate={{ y: [0, 10, 0] }}

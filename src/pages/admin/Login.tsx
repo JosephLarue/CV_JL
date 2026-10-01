@@ -29,8 +29,8 @@ export default function Login({ onSuccess }: { onSuccess: () => void }) {
     <div className="flex min-h-screen items-center justify-center p-5">
       <form onSubmit={submit} className="card w-full max-w-sm space-y-4">
         <div>
-          <h1 className="text-xl font-bold text-white">Backoffice</h1>
-          <p className="mt-1 text-sm text-slate-400">Connexion requise</p>
+          <h1 className="text-xl font-bold text-strong">Backoffice</h1>
+          <p className="mt-1 text-sm text-muted">Connexion requise</p>
         </div>
         <div className="space-y-1.5">
           <label className="label" htmlFor="pwd">
@@ -52,7 +52,7 @@ export default function Login({ onSuccess }: { onSuccess: () => void }) {
         <button
           type="button"
           onClick={() => setForgot(true)}
-          className="w-full text-xs text-slate-500 hover:text-slate-300"
+          className="w-full text-xs text-muted hover:text-body"
         >
           Mot de passe oublié ?
         </button>

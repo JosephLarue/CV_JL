@@ -2,8 +2,67 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
+/* ========================================================================
+   THEMES — palette driven by CSS variables (space-separated RGB channels
+   so Tailwind alpha like bg-fg/10 works). Switched via [data-theme] on <html>.
+   ======================================================================== */
+:root,
+[data-theme='dark'] {
   color-scheme: dark;
+  --ink: 12 8 19;
+  --panel: 23 18 33;
+  --fg: 255 255 255;
+  --strong: 255 255 255;
+  --body: 203 213 225;
+  --muted: 148 163 184;
+  --accent: 56 189 248;
+  --accent2: 255 110 199;
+  --neon: 255 110 199;
+}
+
+[data-theme='light'] {
+  color-scheme: light;
+  --ink: 245 247 251;
+  --panel: 255 255 255;
+  --fg: 15 23 42;
+  --strong: 15 23 42;
+  --body: 51 65 85;
+  --muted: 100 116 139;
+  --accent: 2 132 199;
+  --accent2: 219 39 119;
+  --neon: 219 39 119;
+}
+
+/* Daltonien: neutral high-contrast base; accents overridden per deficiency. */
+[data-theme='daltonien'] {
+  color-scheme: dark;
+  --ink: 10 10 12;
+  --panel: 26 26 31;
+  --fg: 255 255 255;
+  --strong: 255 255 255;
+  --body: 218 218 224;
+  --muted: 161 161 170;
+  --accent: 56 189 248;
+  --accent2: 245 158 11;
+  --neon: 245 158 11;
+}
+/* Rouge mal perçue (protanopie) → bleu + jaune */
+[data-theme='daltonien'][data-cb='red'] {
+  --accent: 59 130 246;
+  --accent2: 234 179 8;
+  --neon: 234 179 8;
+}
+/* Vert mal perçu (deutéranopie) → bleu + orange */
+[data-theme='daltonien'][data-cb='green'] {
+  --accent: 37 99 235;
+  --accent2: 249 115 22;
+  --neon: 249 115 22;
+}
+/* Bleu mal perçu (tritanopie) → rouge + turquoise */
+[data-theme='daltonien'][data-cb='blue'] {
+  --accent: 225 29 72;
+  --accent2: 20 184 166;
+  --neon: 225 29 72;
 }
 
 html {
@@ -11,8 +70,9 @@ html {
 }
 
 body {
-  @apply bg-ink text-slate-200 font-sans antialiased;
+  @apply bg-ink text-body font-sans antialiased;
   overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* ---- custom scrollbar ---- */
@@ -20,18 +80,18 @@ body {
   width: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: #0b1020;
+  background: rgb(var(--ink));
 }
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(#38bdf8, #ff6ec7);
+  background: linear-gradient(rgb(var(--accent)), rgb(var(--accent2)));
   border-radius: 99px;
-  border: 2px solid #0c0813;
+  border: 2px solid rgb(var(--ink));
 }
 
 /* ---- selection ---- */
 ::selection {
-  background: rgba(56, 189, 248, 0.3);
-  color: #fff;
+  background: rgb(var(--accent) / 0.3);
+  color: rgb(var(--strong));
 }
 
 @layer components {
@@ -45,22 +105,22 @@ body {
     @apply btn bg-accent text-ink shadow-neon hover:-translate-y-0.5 hover:bg-sky-300;
   }
   .btn-ghost {
-    @apply btn border border-white/10 text-slate-200 hover:border-white/25 hover:bg-white/5;
+    @apply btn border border-fg/10 text-body hover:border-fg/25 hover:bg-fg/5;
   }
   .card {
-    @apply relative rounded-xl border border-white/10 bg-panel/60 p-5 backdrop-blur transition-all duration-300;
+    @apply relative rounded-xl border border-fg/10 bg-panel/60 p-5 backdrop-blur transition-all duration-300;
   }
   .card-hover {
     @apply hover:-translate-y-1 hover:border-accent/40 hover:shadow-xl hover:shadow-accent/10;
   }
   .label {
-    @apply block text-xs font-medium uppercase tracking-wide text-slate-400;
+    @apply block text-xs font-medium uppercase tracking-wide text-muted;
   }
   .input {
-    @apply w-full rounded-lg border border-white/10 bg-ink/60 px-3 py-2 text-sm text-slate-100 outline-none transition-colors focus:border-accent focus:ring-1 focus:ring-accent/40;
+    @apply w-full rounded-lg border border-fg/10 bg-ink/60 px-3 py-2 text-sm text-strong outline-none transition-colors focus:border-accent focus:ring-1 focus:ring-accent/40;
   }
   .chip {
-    @apply inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-slate-200 transition-all duration-200 hover:scale-105 hover:border-accent/50 hover:text-white;
+    @apply inline-flex items-center rounded-full border border-fg/10 bg-fg/5 px-3 py-1 text-xs font-medium text-body transition-all duration-200 hover:scale-105 hover:border-accent/50 hover:text-strong;
   }
   .gradient-text {
     @apply bg-gradient-to-r from-sky-300 via-accent to-accent2 bg-clip-text text-transparent;
